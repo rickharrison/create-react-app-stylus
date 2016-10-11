@@ -18,6 +18,17 @@ switch(script) {
 
     break;
 
+  case 'build':
+    spawn.sync('stylus', [input], {
+      stdio: 'inherit'
+    });
+
+    spawn.sync('react-scripts', ['build'], {
+      stdio: 'inherit'
+    });
+
+    break;
+
   default:
     console.log('Unknown script: ' + script);
     console.log('Perhaps you meant to run `react-scripts` or `react-scripts-with-stylus start`');
