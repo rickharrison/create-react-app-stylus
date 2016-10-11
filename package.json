@@ -1,0 +1,26 @@
+{
+  "name": "create-react-app-stylus",
+  "version": "1.0.0",
+  "description": "Add stylus support to create-react-app.",
+  "main": "./bin/react-scripts-with-stylus.js",
+  "bin": {
+    "react-scripts-with-stylus": "./bin/react-scripts-with-stylus.js"
+  },
+  "scripts": {},
+  "repository": "rickharrison/create-react-app-stylus",
+  "keywords": [
+    "create-react-app",
+    "react",
+    "stylus"
+  ],
+  "author": "Rick Harrison",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rickharrison/create-react-app-stylus/issues"
+  },
+  "homepage": "https://github.com/rickharrison/create-react-app-stylus",
+  "dependencies": {
+    "cross-spawn": "^4.0.2",
+    "stylus": "^0.54.5"
+  }
+}
