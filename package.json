@@ -1,6 +1,6 @@
 {
   "name": "create-react-app-stylus",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Add stylus support to create-react-app.",
   "main": "./bin/react-scripts-with-stylus.js",
   "bin": {

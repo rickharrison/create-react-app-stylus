@@ -12,14 +12,14 @@ switch(script) {
       stdio: 'inherit'
     });
 
-    const stylusWatch = spawn('stylus', ['--watch', input], {
+    const stylusWatch = spawn('stylus', ['--watch', '--include-css', input], {
       stdio: 'inherit'
     });
 
     break;
 
   case 'build':
-    spawn.sync('stylus', [input], {
+    spawn.sync('stylus', ['--include-css', input], {
       stdio: 'inherit'
     });
 
