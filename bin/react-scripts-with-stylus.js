@@ -6,20 +6,45 @@ const spawn = require('cross-spawn');
 const script = process.argv[2];
 const input = path.join(process.cwd(), process.argv[3] || 'src');
 
+// allow use of stylus plugins
+function addStylusPlugins(args) {
+  const plugins = process.argv[4].split(',');
+  if(plugins && plugins.length){
+    plugins.map(p =>
+      args = args.concat(['--use', p])
+    );
+  }
+  return args;
+}
+
+let args;
+
 switch(script) {
   case 'start':
     const reactScripts = spawn('react-scripts', ['start'], {
       stdio: 'inherit'
     });
 
-    const stylusWatch = spawn('stylus', ['--watch', '--include-css', input], {
+    args = ['--watch', '--include-css', input];
+
+    if(process.argv[4]){
+      args = addStylusPlugins(args);
+    }
+
+    const stylusWatch = spawn('stylus', args, {
       stdio: 'inherit'
     });
 
     break;
 
   case 'build':
-    spawn.sync('stylus', ['--include-css', input], {
+    args = ['--include-css', input];
+
+    if(process.argv[4]){
+      args = addStylusPlugins(args);
+    }
+
+    spawn.sync('stylus', args, {
       stdio: 'inherit'
     });
 
